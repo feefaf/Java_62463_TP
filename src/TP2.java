@@ -168,4 +168,74 @@ public class TP2 {
         System.out.println(ruler);
 
     }
+    public static void nombrepremier(){
+        Scanner scanner = new Scanner(System.in);
+        int cpt = 0;
+        int nb;
+        do{
+            System.out.print("Veuillez bien saisir un entier positif");
+            nb = scanner.nextInt();
+        } while (nb<=0);
+
+        for (int i = 2; i<nb;i+=1){
+            if (nb%i==0){
+                cpt+=1;
+            }
+        }
+        if (cpt>=1){
+            System.out.print("Ce chiffre n'est pas un nombre premier");
+        }
+        else {
+            System.out.print("Ce chiffre est un nombre premier");
+        }
+    }
+
+    //3.4.1
+    public static void initialisationTableau() {
+        int[] tableau = new int[20];
+        int somme = 0;
+        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < tableau.length; i++) {
+            System.out.println("Saisir un entier");
+            int entier = scanner.nextInt();
+            tableau[i] = entier;
+            somme+=entier;
+        }
+        System.out.println("La somme des éléments du tableau est "+somme);
+
+        int min = tableau[0], max = tableau[0];
+        for (int nb : tableau){
+            if (nb<min){
+                min = nb;
+            }
+            else if (nb>max) {
+                max = nb;
+            }
+
+        }
+        System.out.println("Le minimum du tableau est "+min);
+        System.out.println("Le maximum du tableau est "+max);
+
+
+        for (int i = 0; i<tableau.length;i++){
+            if (tableau[i]%2==0){
+                System.out.println("Les nombres pairs sont "+tableau[i]);
+            }
+            else if (i%2==0){
+                System.out.println("Les nombres avec un indice pairs sont "+tableau[i]);
+            }
+        }
+    }
+    public static int[] inverseTableau(int[] tableau){
+        int idx = tableau.length-1;
+        int[] inversed = new int[tableau.length];
+        int i = 0;
+        while (idx>=0){
+            inversed[i] = tableau[idx];
+            idx-=1;
+            i+=1;
+        }
+        return inversed;
+
+    }
 }

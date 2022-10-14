@@ -6,6 +6,7 @@ public class Main {
         //somme();
         //division();
         pavedroit();
+
     }
     public static void somme() {
         System.out.println("Veuillez saisir le premier entier");
